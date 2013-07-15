@@ -9,13 +9,13 @@ p, div.price_line{
 		display:inline;
 	}
 }
-.cart{
+.cart,#side #cart{
   .cart_title{
-    font : 120% bold;
+    font: 120% bold;
   }
   .item_price, .total_line{
   text-align: right;
-  font-weight:bold;
+  //font-weight:bold;
 }
   .total_line .total_cell{
     font-weight:bold;
