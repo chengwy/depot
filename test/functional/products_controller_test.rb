@@ -3,7 +3,14 @@ require 'test_helper'
 class ProductsControllerTest < ActionController::TestCase
   setup do
     @product = products(:one)
-    @update = {title: 'Lorem Ipsum', description: 'Wibbles are fun!', image_url: 'lorem.jpg', price: 19.95}
+	#modified -------after title should not has space key,so does description,image_url,price---------------------------------
+    @update = {
+      title: 'Lorem Ipsum',
+      description: 'Wibbles are fun!',
+      image_url: 'lorem.jpg',
+      price: 19.95
+    }
+    #modified ----------------------------------------
   end
 
   test "should get index" do
@@ -19,10 +26,12 @@ class ProductsControllerTest < ActionController::TestCase
 
   test "should create product" do
     assert_difference('Product.count') do
+      #modified ----------------------------------------
       post :create, product: @update
+      #modified ----------------------------------------
+    end
 
     assert_redirected_to product_path(assigns(:product))
-    end
   end
 
   test "should show product" do
@@ -36,7 +45,9 @@ class ProductsControllerTest < ActionController::TestCase
   end
 
   test "should update product" do
+    #modified ----------------------------------------
     put :update, id: @product, product: @update
+    #modified ----------------------------------------
     assert_redirected_to product_path(assigns(:product))
   end
 
@@ -44,7 +55,7 @@ class ProductsControllerTest < ActionController::TestCase
     assert_difference('Product.count', -1) do
       delete :destroy, id: @product
     end
+
     assert_redirected_to products_path
   end
 end
-
