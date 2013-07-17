@@ -11,6 +11,7 @@
     float:left;
   }
 }
+
 #notice{
   color:#000 !important;
   border: 2px solid red;
@@ -19,6 +20,7 @@
   background-color:#f0f0f0;
   font: bold smaller sans-serif;
 }
+
 #columns{
   background:#141;
   #main{
@@ -71,4 +73,42 @@
     }
   }
   
+}
+
+.depot_form{
+  fieldset{
+    background: #efe;
+    
+    legend{
+      color: #dfd;
+      background: #141;
+      font-family: sans-serif;
+      padding: 0.2em 1em;
+    }
+  }
+  
+  form{
+    label{
+      width: 5em;
+      float: left;
+      text-align: right;
+      padding-top: 0.2em;
+      margin-right: 0.1em;
+      margin-top: 0.8em;
+      display: block;
+    }
+    
+    select, textarea, input{
+      margin-left: 0.5em; 
+      margin-top: 1.0em;     
+    }
+    
+    .submit{
+      margin-left: 4em;
+    }
+    
+    br{
+      display: none;
+    }
+  }
 }
