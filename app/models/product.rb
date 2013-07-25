@@ -1,11 +1,7 @@
 class Product < ActiveRecord::Base
   has_many :line_items
-<<<<<<< HEAD
   has_many :orders, :through => :line_items
-=======
-  has_many :orders, through: :line_items
-  
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
+
   before_destroy :ensure_not_referenced_by_any_line_item
   
   attr_accessible :description, :image_url, :price, :title

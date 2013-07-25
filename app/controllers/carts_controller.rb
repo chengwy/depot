@@ -1,11 +1,8 @@
 class CartsController < ApplicationController
   # GET /carts
   # GET /carts.json
-<<<<<<< HEAD
   skip_before_filter :authorize, only: [:create, :update, :destroy]
   
-=======
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
   def index
     @carts = Cart.all
 
@@ -89,13 +86,7 @@ class CartsController < ApplicationController
     session[:cart_id] =  nil
 
     respond_to do |format|
-<<<<<<< HEAD
-      format.html { redirect_to store_url, 
-        notice: 'Your cart is currently empty' }
-=======
-      format.html { redirect_to store_url}
-        #notice: 'Your cart is currently empty' }
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
+      format.html { redirect_to store_url}  
       format.json { head :no_content }
     end
   end

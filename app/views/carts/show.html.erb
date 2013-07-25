@@ -1,35 +1,19 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<<<<<<< HEAD
 <div class="cart_title">Your Pragmatic Cart</div>
 <table>
 	<%= render(@cart.line_items) %>
 	
 	<tr class="total_line">
-		
-=======
-<div class="cart_title">Your Cart</div>
-<table>
-	<%= render(@cart.line_items)%>
-	
-	<tr class="total_line">
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 		<td colspan="2">Total</td>
 		<td class="total_cell"><%= number_to_currency(@cart.total_price)%></td>
 	</tr>
 </table>
 
-<<<<<<< HEAD
 <%= button_to 'Empty cart', @cart, method: :delete,
 	confirm: 'Are you sure?'%>
-=======
-<%= button_to 'Empty cart', @cart, method: :delete, confirm: 'Are you sure?'%>
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
+
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', carts_path %>

@@ -1,17 +1,6 @@
-<<<<<<< HEAD
-#START:layout
-#START:main
-#START:cart
-#START:currency
-#START:checkout
-#START:flash
-en:
 
-#END:cart
-#END:checkout
-#END:flash
-#END:main
-#END:layout
+en:
+#START:currency
   number:
     currency:
       format:
@@ -76,10 +65,4 @@ en:
 #START:flash
   thanks:          "Thank you for your order"
 #END:flash
-=======
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
-  hello: "Hello world"
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10

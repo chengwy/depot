@@ -11,10 +11,7 @@
     float:left;
   }
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 #notice{
   color:#000 !important;
   border: 2px solid red;
@@ -23,10 +20,7 @@
   background-color:#f0f0f0;
   font: bold smaller sans-serif;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 #columns{
   background:#141;
   #main{
@@ -38,7 +32,6 @@
     float:left;
     padding: 1em 2em;
     width:13em;
-<<<<<<< HEAD
     background:#141;
     form,div{
       display:inline;
@@ -63,32 +56,6 @@
         font-weight:bold;
       }
       .total_line .total_cell{
-=======
-    background: #141;
-    
-    form,div{
-      display: inline;
-    }
-    
-    input{
-      font-size: small;
-    }
-    
-    #cart{
-      font-size: smaller;
-      color: white;
-      
-      table{
-        border-top: 1px dotted #595;
-        border-bottom: 1px dotted #595;
-        margin-bottom: 10px;
-      }
-      .item_price, .total_line{
-        text-align: right;
-      }
-      .total_line .total_cell{
-        text-align: right;
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
         font-weight:bold;
         border-top: 1px solid #595;
       }
@@ -107,7 +74,7 @@
   }
   
 }
-<<<<<<< HEAD
+
 .depot_form {
   fieldset {
     background: #efe;
@@ -141,43 +108,4 @@
   float: right;
   margin: -0.25em 0.1em;
 }
-=======
 
-.depot_form{
-  fieldset{
-    background: #efe;
-    
-    legend{
-      color: #dfd;
-      background: #141;
-      font-family: sans-serif;
-      padding: 0.2em 1em;
-    }
-  }
-  
-  form{
-    label{
-      width: 5em;
-      float: left;
-      text-align: right;
-      padding-top: 0.2em;
-      margin-right: 0.1em;
-      margin-top: 0.8em;
-      display: block;
-    }
-    
-    select, textarea, input{
-      margin-left: 0.5em; 
-      margin-top: 1.0em;     
-    }
-    
-    .submit{
-      margin-left: 4em;
-    }
-    
-    br{
-      display: none;
-    }
-  }
-}
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10

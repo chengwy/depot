@@ -1,12 +1,9 @@
 class Cart < ActiveRecord::Base
   # attr_accessible :title, :body
-<<<<<<< HEAD
-  has_many :line_items, dependent: :destroy
-=======
+
   attr_accessible :order
   has_many :line_items, dependent: :destroy
-  
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
+
   def add_product(product_id)
     current_item = line_items.find_by_product_id(product_id)
 	  if current_item
@@ -16,20 +13,9 @@ class Cart < ActiveRecord::Base
 	  end 
 	  current_item
   end 
-<<<<<<< HEAD
+
   def total_price
     line_items.to_a.sum {|item| item.total_price }
   end
-=======
-  
-  def total_price
-    line_items.to_a.sum {|item| item.total_price }
-  end
-  
-=begin
-  def total_items
-    line_items.sum(:quantity);
-  end
-=end
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
+
 end

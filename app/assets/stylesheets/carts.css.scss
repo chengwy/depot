@@ -11,21 +11,13 @@ p, div.price_line{
 }
 .cart,#side #cart{
   .cart_title{
-<<<<<<< HEAD
     font : 120% bold;
   }
   .item_price, .total_line{
   text-align: right;
   font-weight:bold;
   }
-=======
-    font: 120% bold;
-  }
-  .item_price, .total_line{
-  text-align: right ;
-  font-weight:bold;
-}
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
+
   .total_line .total_cell{
     font-weight:bold;
     border-top: 1px solid #595;

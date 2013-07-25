@@ -1,9 +1,7 @@
 class LineItemsController < ApplicationController
-<<<<<<< HEAD
+
   skip_before_filter :authorize, only: :create
   
-=======
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
   # GET /line_items
   # GET /line_items.json
   def index
@@ -50,20 +48,13 @@ class LineItemsController < ApplicationController
     #@line_item = LineItem.new(params[:line_item])
 	  #@line_item = @cart.line_items.build(product: product)
     @line_item = @cart.add_product(product.id)
-<<<<<<< HEAD
+
 	  respond_to do |format|
       if @line_item.save
         format.html { redirect_to store_url}
         format.js {@current_item = @line_item }
 				#	notice: 'Line item was successfully created.'}
-=======
-    
-	  respond_to do |format|
-      if @line_item.save
-        format.html { redirect_to store_url}
-				#	notice: 'Line item was successfully created.'}
-        format.js   {@current_item = @line_item}
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
+
         format.json { render json: @line_item, 
           status: :created, location: @line_item }
       else

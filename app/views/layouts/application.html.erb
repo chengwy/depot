@@ -8,7 +8,6 @@
 </head>
 <body class="<%= controller.controller_name %>">
 	<div id="banner">
-<<<<<<< HEAD
 		<%= form_tag store_path, :class => 'locale' do %>
         <%= select_tag 'set_locale',
           options_for_select(LANGUAGES, I18n.locale.to_s),
@@ -44,26 +43,6 @@
 			</ul>
 			<%= button_to 'Logout' , logout_path, method: :delete %>
 			<% end %>
-=======
-		<%= image_tag("logo.png")%>
-		<%= @page_title || "Pragmatic Bookshelf" %>
-	</div>
-	<div id="columns">
-		<div id="side">
-			<div id="cart">		
-			<% if @cart%>
-			    <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do%>
-				  <%= render @cart%>
-				<%end%>
-			<%end%>
-			</div>
-			<ul>
-				<li><a href="http://www....">Home</a></li>
-				<li><a href="http://www..../faq">Questions</a></li>
-				<li><a href="http://www..../news">News</a></li>
-				<li><a href="http://www..../contact">Contact</a></li>
-			</ul>
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 		</div>
 		<div id="main">
 			<%= yield %>

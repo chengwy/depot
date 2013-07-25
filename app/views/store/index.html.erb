@@ -5,29 +5,17 @@
 <p id="notice"><%= notice%></p>
 <% end %>
 
-<<<<<<< HEAD
 <h1><%= t('.title_html') %></h1>
 
 <% @products.each do |product| %>
 	<div class="entry">
 		<%= image_tag(product.image_url) %>
-=======
-<h1>Your Pragmatic Catalog</h1>
-
-<% @products.each do |product| %>
-	<div class="entry">
-		<%= image_tag(product.image_url)%>
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 		<h3><%= product.title %></h3>
 		<%= sanitize(product.description)%>
 		<div class="price_line">
 			<span class="price"><%= number_to_currency(product.price) %></span>
-<<<<<<< HEAD
 			<%= button_to t('.add_html'), line_items_path(product_id: product),
 				remote: true %>
-=======
-			<%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true%>
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 		</div>		
 	</div>
 <% end %>

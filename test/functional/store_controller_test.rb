@@ -11,21 +11,11 @@ class StoreControllerTest < ActionController::TestCase
     assert_select '.price', /\$[,\d]+\.\d\d/
     #modify--------------------------------
   end
-<<<<<<< HEAD
-  
+
   test "markup needed for store.js.coffee is in place" do
     get   :index
     assert_select '.store .entry > img',3
     assert_select '.entry input[type=submit]',3
   end
 
-=======
-
-   test "markup needed for store.js.coffee is in place" do
-    get :index
-    assert_select '.store .entry > img', 3
-    assert_select '.entry input[type=submit]', 3
-  end
-  
->>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 end
