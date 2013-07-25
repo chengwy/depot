@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130723041047) do
+=======
+ActiveRecord::Schema.define(:version => 20130716142540) do
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -45,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20130723041047) do
     t.datetime "updated_at",  :null => false
   end
 
+<<<<<<< HEAD
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "password_digest"
@@ -52,4 +57,6 @@ ActiveRecord::Schema.define(:version => 20130723041047) do
     t.datetime "updated_at",      :null => false
   end
 
+=======
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 end

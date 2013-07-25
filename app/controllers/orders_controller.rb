@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+<<<<<<< HEAD
   skip_before_filter :authorize, only: [:new ,:create]
   # GET /orders
   # GET /orders.json
@@ -7,6 +8,13 @@ class OrdersController < ApplicationController
     @orders = Order.paginate :page=>params[:page], :order=>'created_at desc',
       :per_page => 10
       
+=======
+  # GET /orders
+  # GET /orders.json
+  def index
+    @orders = Order.paginate page: params[:page], order: 'Created_at desc', per_page: 10
+
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orders }
@@ -29,10 +37,18 @@ class OrdersController < ApplicationController
   def new
     @cart = current_cart
     if @cart.line_items.empty?
+<<<<<<< HEAD
       redirect_to store_url, :notice => "Your cart is empty"
       return
     end
     @order = Order.new
+=======
+      redirect_to store_url, notice:"Your cart is empty"
+      return
+    end
+    @order = Order.new
+
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @order }
@@ -49,15 +65,23 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+<<<<<<< HEAD
         OrderNotifier.received(@order).deliver
         format.html { redirect_to(store_url, :notice =>
                       I18n.t('.thanks')) }
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
+=======
+        format.html { redirect_to store_url, notice: 'Thank you for your order.' }
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
         format.json { render json: @order, status: :created, location: @order }
       else
         @cart = current_cart

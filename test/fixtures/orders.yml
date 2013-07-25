@@ -1,9 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+<<<<<<< HEAD
   name: Dave Thomas
   address: MyText
   email: dave@example.org
+=======
+  name: chengwy
+  address: MyText
+  email: chengwy@gmail.com
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
   pay_type: Check
 
 two:

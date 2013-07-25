@@ -11,6 +11,15 @@ class OrdersControllerTest < ActionController::TestCase
     assert_not_nil assigns(:orders)
   end
 
+<<<<<<< HEAD
+=======
+  test "requires item in cart" do
+    get :new
+    assert_redirected_to store_path
+    assert_equal flash[:notice], 'Your cart is empty'  
+  end
+  
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
   test "should get new" do
     item = LineItem.new
     item.build_cart
@@ -20,13 +29,20 @@ class OrdersControllerTest < ActionController::TestCase
     get :new
     assert_response :success
   end
+<<<<<<< HEAD
   
+=======
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 
   test "should create order" do
     assert_difference('Order.count') do
       post :create, order: { address: @order.address, email: @order.email, name: @order.name, pay_type: @order.pay_type }
     end
 
+<<<<<<< HEAD
+=======
+    #assert_redirected_to order_path(assigns(:order))
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
     assert_redirected_to store_path
   end
 
@@ -52,6 +68,7 @@ class OrdersControllerTest < ActionController::TestCase
 
     assert_redirected_to orders_path
   end
+<<<<<<< HEAD
   
   test "require item in cart" do
     get :new
@@ -59,4 +76,6 @@ class OrdersControllerTest < ActionController::TestCase
     assert_equal flash[:notice],'Your cart is empty'
   end
  
+=======
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 end

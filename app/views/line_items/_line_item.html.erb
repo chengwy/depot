@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% if line_item == @current_item %>
 <tr id="current_item">
 <% else %>
@@ -5,5 +6,14 @@
 <% end %>
 	<td><%= line_item.quantity %> &times;</td>
 	<td><%= line_item.product.title %></td>
+=======
+<% if line_item == @current_item%>
+<tr id="current_item">
+<% else %>
+<tr>
+<%end%>
+	<td><%= line_item.quantity%>&times;</td>
+	<td><%= line_item.product.title%></td>
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 	<td class="item_price"><%= number_to_currency(line_item.total_price)%></td>
 </tr>

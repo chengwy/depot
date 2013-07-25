@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
+<<<<<<< HEAD
   before_filter :set_i18n_locale_from_params
   before_filter :authorize
+=======
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
   protect_from_forgery
   
   private
@@ -11,6 +14,7 @@ class ApplicationController < ActionController::Base
 		session[:cart_id] = cart.id
 		cart
 	end
+<<<<<<< HEAD
 	
 	protected
     def authorize
@@ -40,4 +44,6 @@ class ApplicationController < ActionController::Base
     def default_url_options
       { :locale => I18n.locale }
     end
+=======
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 end

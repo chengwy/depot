@@ -10,6 +10,16 @@ class ProductsController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
+=======
+  def who_bought 
+    @product = Product.find(params[:id])
+    respond_to do |format|
+      format.atom
+    end
+  end
+  
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
   # GET /products/1
   # GET /products/1.json
   def show
@@ -81,6 +91,7 @@ class ProductsController < ApplicationController
     end
   end
   
+<<<<<<< HEAD
   def who_bought
     @product = Product.find(params[:id])
     respond_to do |format|
@@ -88,4 +99,6 @@ class ProductsController < ApplicationController
       
     end
   end
+=======
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 end

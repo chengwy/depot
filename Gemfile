@@ -7,6 +7,10 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 
+<<<<<<< HEAD
+=======
+gem 'will_paginate', '~>3.0'
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,10 +24,18 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+<<<<<<< HEAD
   gem 'jquery-rails','2.3.0'
   gem 'will_paginate', '~>3.0'
 # To use ActiveModel has_secure_password
   gem 'bcrypt-ruby', '~> 3.0.0'
+=======
+gem 'jquery-rails', '2.3.0'
+
+#gem 'turbolinks'
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

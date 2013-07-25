@@ -1,5 +1,6 @@
 <div class="cart_title">Your Cart</div>
 <table>
+<<<<<<< HEAD
 	<%= render(cart.line_items) %>
 
 	<tr class="total_line">
@@ -11,3 +12,16 @@
 <%= button_to t('.checkout'), new_order_path, method: :get %>
 <%= button_to t('.empty'), cart, method: :delete,
 	confirm: 'Are you sure?'%>
+=======
+	<%= render(cart.line_items)%>
+	
+	<tr class="total_line">
+		<td colspan="2">Total</td>
+		<td class="total_cell"><%= number_to_currency(cart.total_price)%></td>		
+	</tr>	
+</table>
+
+<%= button_to 'Checkout', new_order_path, method: :get%>
+<%= button_to 'Empty cart', cart, method: :delete, confirm: 'Are you sure?'%>
+
+>>>>>>> c6290dc12a73ecc7a81fd35dfb55a42b829b4c10
