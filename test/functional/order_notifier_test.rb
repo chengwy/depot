@@ -18,3 +18,4 @@ class OrderNotifierTest < ActionMailer::TestCase
   end
 
 end
+

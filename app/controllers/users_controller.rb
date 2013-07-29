@@ -44,10 +44,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-		format.html { redirect_to users_url, 
-		
-			notice: "User #{@user.name} was successfully created."}
-        
+        format.html { redirect_to users_url, 
+          notice: "User #{@user.name} was successfully created." }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -55,7 +53,7 @@ class UsersController < ApplicationController
       end
     end
   end
-	#test sunmaoyu yes  haha
+
   # PUT /users/1
   # PUT /users/1.json
   def update
@@ -64,12 +62,11 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to users_url, 
-			notice: "User #{@user.name} was successfully updated."}
+          notice: "User #{@user.name} was successfully updated."'' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @user.errors,
-			status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end

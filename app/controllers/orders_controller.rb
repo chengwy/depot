@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-	skip_before_filter :authorize,only: [:new,:create]
+
+  skip_before_filter :authorize, only: [:new ,:create]
   # GET /orders
   # GET /orders.json
   def index
@@ -29,10 +30,12 @@ class OrdersController < ApplicationController
   def new
     @cart = current_cart
     if @cart.line_items.empty?
+
       redirect_to store_url, :notice => "Your cart is empty"
       return
     end
     @order = Order.new
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @order }
@@ -46,24 +49,25 @@ class OrdersController < ApplicationController
 
   # POST /orders
   # POST /orders.json
-	def create
-		@order = Order.new(params[:order])
-		@order.add_line_items_from_cart(current_cart)
+  def create
+    @order = Order.new(params[:order])
+    @order.add_line_items_from_cart(current_cart)
+    respond_to do |format|
+      if @order.save
+        Cart.destroy(session[:cart_id])
+        session[:cart_id] = nil
 
-		respond_to do |format|
-		  if @order.save
-			Cart.destroy(session[:cart_id])
-			session[:cart_id] = nil
-			OrderNotifier.received(@order).deliver
-			format.html { redirect_to store_url, notice: 'Thank you for your order' }
-			format.json { render json: @order, status: :created, location: @order }
-		  else
-			@cart = current_cart
-			format.html { render action: "new" }
-			format.json { render json: @order.errors, status: :unprocessable_entity }
-		  end
-		end
-	  end
+        OrderNotifier.received(@order).deliver
+        format.html { redirect_to(store_url, :notice =>
+                      I18n.t('.thanks')) }
+        format.json { render json: @order, status: :created, location: @order }
+      else
+        @cart = current_cart
+        format.html { render action: "new" }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # PUT /orders/1
   # PUT /orders/1.json
