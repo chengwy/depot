@@ -34,7 +34,7 @@ Depot::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  
+
   #-----------modify---------------------------------
   config.action_mailer.delivery_method = :test
   
@@ -48,4 +48,5 @@ Depot::Application.configure do
     password: "secret" ,
     enable_starttls_auto: true
 }
+
 end

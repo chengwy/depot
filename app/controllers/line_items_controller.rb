@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+
   skip_before_filter :authorize, only: :create
   
   # GET /line_items
@@ -47,11 +48,13 @@ class LineItemsController < ApplicationController
     #@line_item = LineItem.new(params[:line_item])
 	  #@line_item = @cart.line_items.build(product: product)
     @line_item = @cart.add_product(product.id)
+
 	  respond_to do |format|
       if @line_item.save
         format.html { redirect_to store_url}
         format.js {@current_item = @line_item }
 				#	notice: 'Line item was successfully created.'}
+
         format.json { render json: @line_item, 
           status: :created, location: @line_item }
       else

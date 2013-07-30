@@ -11,6 +11,7 @@
     float:left;
   }
 }
+
 #notice{
   color:#000 !important;
   border: 2px solid red;
@@ -19,6 +20,7 @@
   background-color:#f0f0f0;
   font: bold smaller sans-serif;
 }
+
 #columns{
   background:#141;
   #main{
@@ -72,6 +74,7 @@
   }
   
 }
+
 .depot_form {
   fieldset {
     background: #efe;
@@ -100,3 +103,9 @@
   margin: 0.5em 0;
   }
 }
+
+.locale {
+  float: right;
+  margin: -0.25em 0.1em;
+}
+
