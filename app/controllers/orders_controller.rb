@@ -59,7 +59,7 @@ class OrdersController < ApplicationController
         session[:cart_id] = nil
 
         OrderNotifier.received(@order).deliver
-        format.html { redirect_to(store_url, notice: "#{@order.time}")}
+        format.html { redirect_to(store_url, notice: "#{@order.created_at}")}
                    
         format.json { render json: @order, status: :created, location: @order }
       else
