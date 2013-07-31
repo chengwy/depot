@@ -12,8 +12,22 @@ class Order < ActiveRecord::Base
       line_items << item
     end
   end
+
   def total_price
     line_items.to_a.sum {|item| item.total_price }
   end
   
+  def modify_product_stock_volumes(cart)
+    cart.line_items.each do |item|
+      #Product.find_by_title(item.title).stock_volumes -= item.quantity
+      
+    #  product = Product.find(:all,
+     #   :conditions => " id = 'item.product_id'")
+      if item 
+        product = Product.find(item.product_id)
+        product.stock_volumes -= item.quantity
+        product.save
+      end
+    end
+  end
 end
