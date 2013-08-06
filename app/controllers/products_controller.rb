@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  skip_before_filter :authorize, only: [:show, :search]
   # GET /products
   # GET /products.json
   def index
@@ -87,5 +88,12 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
+  #search/IT
+  def search
+    #@product = Product.find(:all ,tags:  '#{tags}' )
+    #@product = Product.where(:tags => params[:tags])
+
+    @products = Product.find(:all ,:conditions => ["tags = ?", params[:tags]])
+  end
 end
