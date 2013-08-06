@@ -10,7 +10,17 @@
   img{
     float:left;
   }
+  #sign{
+	font: normal 15px "Times New Roman", serif;
+	text-align:right;
+	#signu{
+		float:right;
+		padding-left:5px;
+		color:red;
+	}
+  }
 }
+
 
 #notice{
   color:#000 !important;
