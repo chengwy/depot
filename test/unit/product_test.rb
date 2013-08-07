@@ -43,7 +43,7 @@ class ProductTest < ActiveSupport::TestCase
     assert_equal "must be greater than or equal to 0.01",
       product.errors[:price].join('; ')
     product.price = 1
-    assert product.valid?
+    assert product.valid?,"invalid"
   end
   def new_product (image_url)
     product = Product.new(title:       "My Book Title",
