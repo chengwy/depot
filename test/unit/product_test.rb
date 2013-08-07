@@ -24,8 +24,8 @@ class ProductTest < ActiveSupport::TestCase
     assert product.errors[:description].any?
     assert product.errors[:price].any?
     assert product.errors[:image_url].any?
-    assert product.errors[:stock_volumes].any?
     assert product.errors[:tags].any?
+    assert product.errors[:stock_volumes].any?
   end
   
   test "product price must be positive" do
@@ -43,7 +43,7 @@ class ProductTest < ActiveSupport::TestCase
     assert_equal "must be greater than or equal to 0.01",
       product.errors[:price].join('; ')
     product.price = 1
-    
+    assert product.valid?
   end
 
   def new_product (image_url)
