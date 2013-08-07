@@ -24,7 +24,7 @@ class ProductTest < ActiveSupport::TestCase
     assert product.errors[:description].any?
     assert product.errors[:price].any?
     assert product.errors[:image_url].any?
-    assert product.errors[:tags].any?
+    
     assert product.errors[:stock_volumes].any?
   end
   
