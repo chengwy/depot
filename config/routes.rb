@@ -1,4 +1,14 @@
 Depot::Application.routes.draw do
+
+  get "subclasses/create"
+
+  get "subclasses/destroy"
+
+
+  resources :types do  
+    resources :subclasses  
+  end  
+
   get "comments/create"
 
   get "comments/destroy"
@@ -29,5 +39,6 @@ Depot::Application.routes.draw do
     end
     get 'search'=> 'products#search'
     root :to => 'store#index', :as => 'store'
+
   end
 end

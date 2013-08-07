@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type name:</b>
+  <%= @type.type_name %>
+</p>
+
+<h2>subclass</h2>  
+<% if @type.subclasses %>
+<% @type.subclasses.each do |subclass| %>  
+  <p><%= subclass.content %></p>  
+  <p><%= subclass.created_at %> </p>  
+<% end %>  
+<%end%>  
+<%= form_for [@type,@type.subclasses.build] do |f| %>  
+  <p><%= f.text_area :content, :size => '10' %> </p>  
+  <p><%= f.submit "create" %> </p>  
+  <p><%= link_to "Delete", @type, :method => :delete, :confirm => "Are you sure?" %></p>  
+<% end %>  
+
+<%= link_to 'Edit', edit_type_path(@type) %> |
+<%= link_to 'Back', types_path %>

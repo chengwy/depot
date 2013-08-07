@@ -40,7 +40,7 @@
 			<br />
 			<form action="/search" method="get">  
 			<div class="field">
-    			<label class="tag">Tags</label><br />
+    			<label class="tag">Book Tag</label><br />
     			<input type="text" name="tags" />
     			<br />
     			<br />
@@ -51,15 +51,15 @@
 
 
 			<ul>
-				<a href="http://www...." ><%= t('.home') %></a><br />
-                <a href="http://www..../faq" ><%= t('.questions') %></a><br />
-                <a href="http://www..../news" ><%= t('.news') %></a><br />
-                <a href="http://www..../contact" ><%= t('.contact') %></a><br />
+				<li><%= link_to 'Home Page', store_path %></li>
+                <li><a href="http://www..../faq" ><%= t('.questions') %></a></li>
+                <li><a href="http://www..../news" ><%= t('.news') %></a></li>
+                <li><a href="http://www..../contact" ><%= t('.contact') %></a></li>
 			</ul>
 			
 			<% if session[:user_id] %>
 				<ul>
-					<li><%= link_to 'Home Page', store_path %></li>
+					
 					<li><%= link_to 'Orders' , orders_path %></li>
 					<li><%= link_to 'Products', products_path %></li>
 					<li><%= link_to 'Users', users_path %></li>		
@@ -68,7 +68,45 @@
 			<% end %>
 			<br>
 			<br>
+			<div class="type">
+			<h3>BOOK TYPES</h3>
 
+			<table>
+			  <tr>
+			    
+			    <th></th>
+			    <th></th>
+			    <th></th>
+			  </tr>
+			<% @type = Type.all%>
+			<% if @type %>
+			<% @type.each do |type| %>
+			  <tr>
+			    <td>[<%= type.type_name %>]
+			    
+			    	<br>
+				    <form action="/search" method="get">
+				    	<select name="tags">
+				    		<% type.subclasses.each do |subclass| %>
+				    		<option value = "<%= subclass.content%>" ><%= subclass.content%></option>
+				    		<% end %>
+				    		<br />
+				    		<br />
+				    		 <input type="submit" value="search" />
+				    	</select>
+				    	
+				    </form>		
+				</td>
+			<!--    <td><%= link_to 'Show', type %></td>
+			    <td><%= link_to 'Edit', edit_type_path(type) %></td>
+			    <td><%= link_to 'Destroy', type, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+			  </tr>
+			<% end %>
+			<%end%>
+			</table>
+			<br />
+		<!--	<%= link_to 'New Type', new_type_path %>	-->
+		</div>
 		</div>
 		<div id="main">
 			<%= yield %>

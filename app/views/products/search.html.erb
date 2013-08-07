@@ -4,7 +4,7 @@
 <% if notice %>
 <p id="notice"><%= notice%></p>
 <% end %>
-<% if @products.first%>
+<% if @products.first %>
 <h1><%= @products.first.tags %> Books</h1>
 
 <% @products.each do |product| %>
@@ -22,6 +22,6 @@
 	</div>
 <% end %>
 <% else %>
-<p id="no">No Exist!</p>
+<p id="no">Sorry ! No Books available.</p>
 <%= link_to 'back', store_path %>
 <% end %>

@@ -93,7 +93,7 @@ class ProductsController < ApplicationController
   def search
     #@product = Product.find(:all ,tags:  '#{tags}' )
     #@product = Product.where(:tags => params[:tags])
-
+    #@products = Product.find(:all ,:conditions => ["title = ?", params[:title]])
     @products = Product.find(:all ,:conditions => ["tags = ?", params[:tags]])
-  end
+  end 
 end

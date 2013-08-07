@@ -3,12 +3,14 @@ require 'test_helper'
 class ProductsControllerTest < ActionController::TestCase
   setup do
     @product = products(:one)
-	#modified -------after title should not has space key,so does description,image_url,price---------------------------------
+  #modified -------after title should not has space key,so does description,image_url,price---------------------------------
     @update = {
       title: 'Lorem Ipsum',
       description: 'Wibbles are fun!',
       image_url: 'lorem.jpg',
-      price: 19.95
+      price: 19.95,
+      stock_volumes: 18922,
+      tags: 'IT'
     }
     #modified ----------------------------------------
   end

@@ -33,8 +33,9 @@
   </div>
   <div class="field">
     <%= f.label :tags%><br />
-    <%= f.text_field :tags %>
+    <%= f.select :tags, Product::BOOK_TYPES %>
   </div>
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>
