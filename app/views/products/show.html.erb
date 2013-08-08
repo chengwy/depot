@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -20,6 +21,36 @@
   <b>Price:</b>
   <%= @product.price %>
 </p>
+<p>
+  <b>Stock volumes:</b>
+  <%= @product.stock_volumes %>
+</p>
+<p>
+  <b>Tag:</b>
+  <%= @product.tags %>
+</p>
+
+
+<h2>Comments</h2>  
+  
+<% @product.comments.each do |comment| %>  
+  <p><%= comment.text %></p>  
+  <p><%= comment.created_at.localtime %></p>
+
+<!-- 
+  <p><%= link_to "Delete Comment", [@product, comment], :method => :delete, :confirm => "Are you sure?" %></p>  
+-->
+  <p>---------------------------------------------------------------------------------------------------------</p>
+<% end %>  
+  
+<%= form_for [@product,@product.comments.build] do |f| %>  
+  <p><%= f.text_area :text, :size => '40x10' %> </p>  
+  <p><%= f.submit "Make Comment" %> </p>  
+<% end %>
+
+
+
+
 
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

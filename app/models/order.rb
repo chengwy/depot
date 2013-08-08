@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :address, :email, :name, :pay_type
+  attr_accessible :address, :email, :name, :pay_type, :time
   attr_accessible :cart, :product
   has_many :line_items, :dependent => :destroy
   PAYMENT_TYPES = [ "Check", "Credit card" , "Purchase order" ]
@@ -10,6 +10,24 @@ class Order < ActiveRecord::Base
     cart.line_items.each do |item|
       item.cart_id = nil
       line_items << item
+    end
+  end
+
+  def total_price
+    line_items.to_a.sum {|item| item.total_price }
+  end
+  
+  def modify_product_stock_volumes(cart)
+    cart.line_items.each do |item|
+      #Product.find_by_title(item.title).stock_volumes -= item.quantity
+      
+    #  product = Product.find(:all,
+     #   :conditions => " id = 'item.product_id'")
+      if item 
+        product = Product.find(item.product_id)
+        product.stock_volumes -= item.quantity
+        product.save
+      end
     end
   end
 end

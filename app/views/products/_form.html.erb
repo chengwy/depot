@@ -27,6 +27,15 @@
     <%= f.label :price %><br />
     <%= f.text_field :price %>
   </div>
+  <div class="field">
+    <%= f.label :stock_volumes%><br />
+    <%= f.text_field :stock_volumes %>
+  </div>
+  <div class="field">
+    <%= f.label :tags%><br />
+    <%= f.select :tags, Product::BOOK_TYPES %>
+  </div>
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>

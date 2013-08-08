@@ -18,7 +18,9 @@ Product.create(title: 'CoffeeScript',
 	while writing clearer, cleaner, and safer code.
       </p>},
   image_url:   'cs.jpg',    
-  price: 36.00)
+  price: 36.00,
+  tags: 'IT',
+  stock_volumes:12345)
 # . . .
 Product.create(title: 'Programming Ruby 1.9',
   description:
@@ -28,7 +30,9 @@ Product.create(title: 'Programming Ruby 1.9',
         you should add Ruby to your toolbox.
       </p>},
   image_url: 'ruby.jpg',
-  price: 49.95)
+  price: 49.95,
+  tags: 'IT',
+  stock_volumes:12345)
 # . . .
 
 Product.create(title: 'Rails Test Prescriptions',
@@ -42,4 +46,165 @@ Product.create(title: 'Rails Test Prescriptions',
         including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
       </p>},
   image_url: 'rtp.jpg',
-  price: 34.95)
+  price: 34.95,
+  tags: 'IT',
+  stock_volumes:12345)
+
+Product.create(title: 'Testbook',
+  description: 
+    %{<p>
+        Testbook Testbook Testbook Testbook Testbook Testbook Testbook Testbook 
+        Testbook TestbookTestbook Testbook Testbook
+      </p>},
+  image_url: 'rtp.jpg',
+  price: 34.95,
+  tags: 'math',
+  stock_volumes:12345)
+
+Product.create(title: 'Testbook2',
+  description: 
+    %{<p>
+        Testbook Testbook Testbook Testbook Testbook Testbook Testbook Testbook 
+        Testbook TestbookTestbook Testbook Testbook
+      </p>},
+  image_url: 'rtp.jpg',
+  price: 34.95,
+  tags: 'math',
+  stock_volumes:12345)
+
+Product.create(title: 'Testbook3',
+  description: 
+    %{<p>
+        Testbook Testbook Testbook Testbook Testbook Testbook Testbook Testbook 
+        Testbook TestbookTestbook Testbook Testbook
+      </p>},
+  image_url: 'rtp.jpg',
+  price: 34.95,
+  tags: 'math',
+  stock_volumes:12345)
+
+Product.create(title: 'Testbook4',
+  description: 
+    %{<p>
+        Testbook Testbook Testbook Testbook Testbook Testbook Testbook Testbook 
+        Testbook TestbookTestbook Testbook Testbook
+      </p>},
+  image_url: 'rtp.jpg',
+  price: 34.95,
+  tags: 'subclass11',
+  stock_volumes:12345)
+
+Product.create(title: 'Testbook5',
+  description: 
+    %{<p>
+        Testbook Testbook Testbook Testbook Testbook Testbook Testbook Testbook 
+        Testbook TestbookTestbook Testbook Testbook
+      </p>},
+  image_url: 'rtp.jpg',
+  price: 34.95,
+  tags: 'subclass11',
+  stock_volumes:12345)
+
+Product.create(title: 'Testbook6',
+  description: 
+    %{<p>
+        Testbook Testbook Testbook Testbook Testbook Testbook Testbook Testbook 
+        Testbook TestbookTestbook Testbook Testbook
+      </p>},
+  image_url: 'rtp.jpg',
+  price: 34.95,
+  tags: 'subclass11',
+  stock_volumes:12345)
+
+Product.create(title: 'Testbook7',
+  description: 
+    %{<p>
+        Testbook Testbook Testbook Testbook Testbook Testbook Testbook Testbook 
+        Testbook TestbookTestbook Testbook Testbook
+      </p>},
+  image_url: 'rtp.jpg',
+  price: 34.95,
+  tags: 'subclass31',
+  stock_volumes:12345)
+
+Product.create(title: 'Testbook8',
+  description: 
+    %{<p>
+        Testbook Testbook Testbook Testbook Testbook Testbook Testbook Testbook 
+        Testbook TestbookTestbook Testbook Testbook
+      </p>},
+  image_url: 'rtp.jpg',
+  price: 34.95,
+  tags: 'subclass31',
+  stock_volumes:12345)
+
+Product.create(title: 'Testbook9',
+  description: 
+    %{<p>
+        Testbook Testbook Testbook Testbook Testbook Testbook Testbook Testbook 
+        Testbook TestbookTestbook Testbook Testbook
+      </p>},
+  image_url: 'rtp.jpg',
+  price: 34.95,
+  tags: 'subclass42',
+  stock_volumes:12345)
+
+User.delete_all
+User.create(name: 'yumeiling',
+password: '123',
+password_confirmation: '123')
+
+Type.delete_all
+Type.create(type_name: 'type1')
+Type.create(type_name: 'type2')
+Type.create(type_name: 'type3')
+Type.create(type_name: 'type4')
+
+Subclass.delete_all
+Subclass.create(type_id: 1,
+  content: 'IT')
+Subclass.create(type_id: 1,
+  content: 'subclass11')
+Subclass.create(type_id: 1,
+  content: 'subclass12')
+Subclass.create(type_id: 1,
+  content: 'subclass13')
+Subclass.create(type_id: 1,
+  content: 'subclass14')
+Subclass.create(type_id: 1,
+  content: 'subclass15')
+
+Subclass.create(type_id: 2,
+  content: 'math')
+Subclass.create(type_id: 2,
+  content: 'subclass21')
+Subclass.create(type_id: 2,
+  content: 'subclass22')
+Subclass.create(type_id: 2,
+  content: 'subclass23')
+Subclass.create(type_id: 2,
+  content: 'subclass24')
+Subclass.create(type_id: 2,
+  content: 'subclass25')
+
+Subclass.create(type_id: 3,
+  content: 'subclass31')
+Subclass.create(type_id: 3,
+  content: 'subclass32')
+Subclass.create(type_id: 3,
+  content: 'subclass33')
+Subclass.create(type_id: 3,
+  content: 'subclass34')
+Subclass.create(type_id: 3,
+  content: 'subclass35')
+
+Subclass.create(type_id: 4,
+  content: 'subclass41')
+Subclass.create(type_id: 4,
+  content: 'subclass42')
+Subclass.create(type_id: 4,
+  content: 'subclass43')
+Subclass.create(type_id: 4,
+  content: 'subclass44')
+Subclass.create(type_id: 4,
+  content: 'subclass45')

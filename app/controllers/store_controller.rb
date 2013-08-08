@@ -8,5 +8,4 @@ class StoreController < ApplicationController
       @cart = current_cart
     end
   end
-
 end

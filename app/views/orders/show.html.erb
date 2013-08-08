@@ -20,6 +20,20 @@
   <%= @order.pay_type %>
 </p>
 
+<table>
+	<%= render(@order.line_items) %>
+	
+	<tr class="total_line">
+		<td colspan="2">Total</td>
+		<td class="total_cell"><%= number_to_currency(@order.total_price)%></td>
+	</tr>
+	<% if @order.time %>
+	<tr>
+		<td>Order Time:</td>
+		<td><%= @order.created_at.localtime %></td>
+	</tr>
+	<% end %>
+</table>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
